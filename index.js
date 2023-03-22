@@ -1,15 +1,20 @@
 function moduloTest(startingNumber, stoppingNumber) {
   var currentValue = startingNumber;
+  //console.log(`The Current Value is: ${currentValue}.`);
 
-  function recursionCheck(currentValue) {
-    if (currentValue % 2 === 0) {
+  if (currentValue === stoppingNumber) {
+    // console.log(`Current Value: ${currentValue}. Is equal to the Stopping Number: ${stoppingNumber}.`);
+    return;
+  }
+  if (currentValue < stoppingNumber) {
+    // console.log(`Current Value: ${currentValue}. Is less than the Stopping Number: ${stoppingNumber}.`);
+    if (currentValue % 3 === 0) {
       console.log(currentValue);
-    }
-    if (currentValue <= stoppingNumber) {
-      recursionCheck(currentValue + 1);
+      moduloTest(currentValue + 1, stoppingNumber);
+    } else {
+      moduloTest(currentValue + 1, stoppingNumber);
     }
   }
-  recursionCheck(currentValue);
 }
 
 moduloTest(1, 50);
