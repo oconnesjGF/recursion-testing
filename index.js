@@ -1,11 +1,12 @@
-function moduloTest(startingNumber, stoppingNumber) {
+function moduloTest(startingNumber, stoppingNumber, modDivisor) {
   var currentValue = startingNumber;
   if (currentValue >= stoppingNumber) {
-    return console.log(currentValue);
+    console.log(`${currentValue} % ${modDivisor} has no remainder.`);
+    return;
   }
-  if (currentValue % 2 === 0) {
-    console.log(currentValue);
+  if (currentValue % modDivisor === 0) {
+    console.log(`${currentValue} % ${modDivisor} has no remainder.`);
   }
-  moduloTest(currentValue+1, stoppingNumber)
+  moduloTest(currentValue+1, stoppingNumber,modDivisor)
 }
-moduloTest(1, 50);
+moduloTest(1, 50, 2);
