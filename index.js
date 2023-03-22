@@ -3,17 +3,14 @@ function moduloTest(startingNumber, stoppingNumber) {
   //console.log(`The Current Value is: ${currentValue}.`);
 
   if (currentValue === stoppingNumber) {
-    // console.log(`Current Value: ${currentValue}. Is equal to the Stopping Number: ${stoppingNumber}.`);
     return;
   }
-  if (currentValue < stoppingNumber) {
-    // console.log(`Current Value: ${currentValue}. Is less than the Stopping Number: ${stoppingNumber}.`);
-    if (currentValue % 3 === 0) {
-      console.log(currentValue);
-      moduloTest(currentValue + 1, stoppingNumber);
-    } else {
-      moduloTest(currentValue + 1, stoppingNumber);
-    }
+
+  if (currentValue % 2 === 0) {
+    console.log(currentValue);
+    moduloTest(currentValue + 1, stoppingNumber);
+  } else {
+    moduloTest(currentValue + 1, stoppingNumber);
   }
 }
 
